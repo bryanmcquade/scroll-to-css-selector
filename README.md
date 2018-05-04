@@ -16,7 +16,7 @@ To enable scrolling directly to a specific part of a web page, we propose genera
 
 Search engines, which link to pages that contain content relevant to user queries, would benefit from being able to scroll users directly to the part of the page most relevant to their query.
 
-For example, Google Search currently links to named anchors and elements with ids when they are available.  For the query "lincoln gettysburg address sources", Google Search provides a link to the named anchor [#Lincoln’s_sources](https://en.wikipedia.org/wiki/Gettysburg_Address#Lincoln's_sources) for the [wikipedia page for Gettysburg Address](https://en.wikipedia.org/wiki/Gettysburg_Address) as a “Jump to” link:
+For example, Google Search currently links to named anchors and elements with ids when they are available.  For the query "lincoln gettysburg address sources", Google Search provides a link to the named anchor [#Lincoln’s_sources](https://en.wikipedia.org/wiki/Gettysburg_Address#Lincoln's_sources) for the [wikipedia page for Gettysburg Address](https://en.wikipedia.org/wiki/Gettysburg_Address) as a "Jump to" link:
 
 ![Example "Jump to" link in search results](jumpto.png)
 
@@ -28,7 +28,7 @@ When referencing a specific section of a web page, for example as part of sharin
 
 ## Proposed Solution
 
-We propose generalizing [existing support](https://html.spec.whatwg.org/multipage/browsing-the-web.html#find-a-potential-indicated-element) for scrolling to elements as part of a navigation, by adding support for specifying a CSS selector in the fragment of a web page URL, and using the element specified by the CSS selector as the "[indicated part of the document](https://html.spec.whatwg.org/multipage/browsing-the-web.html#the-indicated-part-of-the-document)". The user agent would then follow the existing logic for [scrolling to the fragment identifier](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier) as part of performing a navigation.
+We propose generalizing [existing support](https://html.spec.whatwg.org/multipage/browsing-the-web.html#find-a-potential-indicated-element) for scrolling to elements as part of a navigation, by adding support for specifying a CSS selector in the fragment of a web page URL, and using the element specified by the CSS selector as the [indicated part of the document](https://html.spec.whatwg.org/multipage/browsing-the-web.html#the-indicated-part-of-the-document). The user agent would then follow the existing logic for [scrolling to the fragment identifier](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier) as part of performing a navigation.
 
 This extends the existing support for scrolling to anchor elements with name attributes, as well as DOM elements with ids, to scrolling to other elements in a web page.
 
@@ -44,11 +44,11 @@ Though existing HTML support for id and name attributes specifies the target ele
 
 | URL Fragment                                 | Element selected                                                  | Example matching HTML                                                        |
 | -------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| #targetElement=#maincontent>p:nth-of-type(3) | 3rd paragraph element within an element with id "maincontent"     | ```<div id=maincontent><p>1st pgh<p>2nd pgh<p>Target pgh</div>```            |
-| #targetElement=img[src$="img.jpg"]           | img element, with a src URL attribute ending in "img.jpg"         | ```<img src=img.jpg> or <img src=http://example.com/dir/img.jpg>```          |
-| #targetElement=span.foo.bar                  | span element, with classes "foo" and "bar"                        | ```<span class="foo bar">target span</span>```                               |
-| #targetElement=a[href="http://example.com/"] | link element, with an href URL attribute of "http://example.com/" | ```<a href=[http://example.com/](http://www.example.com/)>target link</a>``` |
-| #targetElement=#article>div.intro>h2+p       | Paragraph immediately following h2 element, within a div with class "intro", with parent with id "article" | ```<div id=article><div class=intro><h2>Title</h2><p>Target pgh...``` |
+| ```#targetElement=#maincontent>p:nth-of-type(3)``` | 3rd paragraph element within an element with id "maincontent"     | ```<div id=maincontent><p>1st pgh<p>2nd pgh<p>Target pgh</div>```            |
+| ```#targetElement=img[src$="img.jpg"]```           | img element, with a src URL attribute ending in "img.jpg"         | ```<img src=img.jpg> or <img src=http://example.com/dir/img.jpg>```          |
+| ```#targetElement=span.foo.bar```                  | span element, with classes "foo" and "bar"                        | ```<span class="foo bar">target span</span>```                               |
+| ```#targetElement=a[href="http://example.com/"]``` | link element, with an href URL attribute of "http://example.com/" | ```<a href=[http://example.com/](http://www.example.com/)>target link</a>``` |
+| ```#targetElement=#article>div.intro>h2+p```       | Paragraph immediately following h2 element, within a div with class "intro", with parent with id "article" | ```<div id=article><div class=intro><h2>Title</h2><p>Target pgh...``` |
 
 #### URL fragment encoding
 
