@@ -99,7 +99,3 @@ Other
 * [http://simonstl.com/articles/cssFragID.html](http://simonstl.com/articles/cssFragID.html)
 * [https://en.wikipedia.org/wiki/Fragment_identifier#Examples](https://en.wikipedia.org/wiki/Fragment_identifier#Examples)
 * [https://www.w3.org/TR/2017/REC-annotation-model-20170223/](https://www.w3.org/TR/2017/REC-annotation-model-20170223/)
-
-## Contributors
-
-Bryan McQuade, Patrick Noland, Domenic Denicola, Grant Wang, Sundeep Tirumalareddy, Ryan Schoen
