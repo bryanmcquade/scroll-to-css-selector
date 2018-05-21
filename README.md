@@ -82,6 +82,10 @@ Finally, we hope to support highlighting of the target element and/or target tex
 
 A browser that doesn’t support this feature will silently ignore the scroll target and fall back to the existing browser behavior of not scrolling the document. As such, this feature is seen as low risk.
 
+### Developer Opt Out
+
+Web developers may wish to disable scrolling to an element specified by a CSS selector on their pages. For example, a site may have a message at the top of the page that they want to make sure all users see as part of visiting that page. As such, we plan to provide an opt-out to developers, perhaps using a ```<meta>``` tag, which disables this feature on that page.
+
 ### Relation to existing support for navigating to a fragment
 
 Browsers currently support scrolling to elements with ids, as well as anchor elements with name attributes. This proposal is intended to extend this existing support, to allow navigating to additional parts of a document. As Shaun Inman [notes](https://shauninman.com/archive/2011/07/25/cssfrag), supporting scrolling to CSS selectors is "not meant to replace more concise, author-designed urls" using id attributes, but rather "enables a site’s users to address specific sub-content that the site’s author may not have anticipated as being interesting".
