@@ -82,7 +82,17 @@ Finally, we hope to support highlighting of the target element and/or target tex
 
 A browser that doesn’t support this feature will silently ignore the scroll target and fall back to the existing browser behavior of not scrolling the document. As such, this feature is seen as low risk.
 
+### Relation to existing support for navigating to a fragment
+
+Browsers currently support scrolling to elements with ids, as well as anchor elements with name attributes. This proposal is intended to extend this existing support, to allow navigating to additional parts of a document. As Shaun Inman [notes](https://shauninman.com/archive/2011/07/25/cssfrag), supporting scrolling to CSS selectors is "not meant to replace more concise, author-designed urls" using id attributes, but rather "enables a site’s users to address specific sub-content that the site’s author may not have anticipated as being interesting".
+
 ## Related Work / Additional Resources
+
+### Using CSS Selectors as Fragment Identifiers
+
+Simon St. Laurent and Eric Meyer [proposed](http://simonstl.com/articles/cssFragID.html) using CSS Selectors as fragment identifiers (last updated in 2012). Their proposal differs only in syntax used: St. Laurent and Meyer proposed specifying the CSS selector using a ```#css(...)``` syntax, for example ```#css(.myclass)```. This syntax is based on the XML Pointer Language (XPointer) Framework, an "extensible system for XML addressing" ... "intended to be used as a basis for fragment identifiers". XPointer does not appear to be supported by commonly used browsers, so we have elected to not depend on it in this proposal.
+
+[Shaun Inman](https://shauninman.com/archive/2011/07/25/cssfrag) and others later implemented browser extensions using this #css() syntax for Firefox, Safari, Chrome, and Opera, which shows that it is possible to implement this feature across a variety of browsers.
 
 Scroll Anchoring
 
@@ -96,6 +106,5 @@ Scroll to text
 
 Other
 
-* [http://simonstl.com/articles/cssFragID.html](http://simonstl.com/articles/cssFragID.html)
 * [https://en.wikipedia.org/wiki/Fragment_identifier#Examples](https://en.wikipedia.org/wiki/Fragment_identifier#Examples)
 * [https://www.w3.org/TR/2017/REC-annotation-model-20170223/](https://www.w3.org/TR/2017/REC-annotation-model-20170223/)
