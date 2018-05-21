@@ -80,7 +80,11 @@ Finally, we hope to support highlighting of the target element and/or target tex
 
 ### Browser compatibility and fallback behavior
 
-A browser that doesn’t support this feature will silently ignore the scroll target and fall back to the existing browser behavior of not scrolling the document. As such, this feature is seen as low risk.
+A browser that doesn’t yet support this feature will attempt to match a CSS selector encoded in the URL fragment using the existing logic to find a [potential indicated element](https://html.spec.whatwg.org/multipage/browsing-the-web.html#find-a-potential-indicated-element). A fragment-encoded CSS selector is prefixed with ‘targetElement=’, which is unlikely to appear in an id or name attribute, so we do not expect a matching element to be found in these cases. Thus, browsers that do not support this feature should fall back to the default behavior of not scrolling the document.
+
+### Potential for documents to change, and selectors to no longer match
+
+If a web page is modified, existing links to that page with CSS selectors encoded in the fragment may either (a) no longer find a matching element, in which case the browser will not scroll (default/existing behavior), or (b) match an unintended element. To minimize the likelihood of matching unintended elements, we intend to publish recommendations for creating stable CSS selectors, based on work to [serialize and restore scroll anchors](https://bugs.chromium.org/p/chromium/issues/detail?id=734679).
 
 ### Developer Opt Out
 
