@@ -38,7 +38,7 @@ Browsers that support [scroll anchor serialization](https://bugs.chromium.org/p/
 
 We propose encoding a [Complex CSS Selector](https://www.w3.org/TR/selectors/#complex) in the URL fragment, prefixed with the ```targetElement=``` string. For example, ```#targetElement=.myclass``` would cause the first element with classname myclass to be selected as the indicated part of the document. Any Complex CSS Selector would be supported.
 
-Though existing HTML support for id and name attributes specifies the target element directly in the fragment, most other mime types make use of this x=y pattern in the fragment, such as [PDF](https://tools.ietf.org/html/rfc3778#section-3) (e.g. #page=12) or [CSV](https://tools.ietf.org/html/rfc7111#section-2) (e.g. #row=4).
+Though existing HTML support for id and name attributes specifies the target element directly in the fragment, most other mime types make use of this x=y pattern in the fragment, such as [Media Fragments](https://www.w3.org/TR/media-frags/#media-fragment-syntax) (e.g. #track=audio&t=10,20), [PDF](https://tools.ietf.org/html/rfc3778#section-3) (e.g. #page=12) or [CSV](https://tools.ietf.org/html/rfc7111#section-2) (e.g. #row=4).
 
 #### Example fragments
 
